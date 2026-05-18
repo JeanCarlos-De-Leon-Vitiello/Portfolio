@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "BebasNeue";
+    src: url("/fonts/BebasNeue-Regular.woff2") format("woff2");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,10 +14,6 @@ body {
     background-color: var(--primairy-color);
 }
 
-@font-face {
-    font-family: "BebasNeue";
-    src: url("../fonts/BebasNeue-Regular.woff2") format("woff2");
-}
 
 :root {
     /* Colors */
