@@ -21,6 +21,7 @@ const { title, HeroTop, HeroBottom } = Astro.props
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+        <script src="/javascript/hamburger.js" defer></script>
 	</head>
 	<body>
         <HeaderComponent />
@@ -35,7 +36,3 @@ const { title, HeroTop, HeroBottom } = Astro.props
         <FooterComponent />
 	</body>
 </html>
-
-<script>
-    import '../javascript/hamburger.js'
-</script>
