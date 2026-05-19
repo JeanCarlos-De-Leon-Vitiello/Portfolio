@@ -7,11 +7,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--secondary-color);
 }
 
 body {
     background-color: var(--primairy-color);
+    color: var(--secondary-color);
 }
 
 
@@ -124,20 +124,57 @@ header nav{
 
 /* hero section */
 .hero-section {
-        height: 90vh;
+        min-height: 100vh;
         background-color: var(--primairy-color);
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 1em;
         align-items: center;
-        border-bottom: solid 1px var(--secondary-color);
 
         h1 {
+            width: 100%;
             font-family: var(--font-primary);
             font-size: var(--font-size-h1);
             color: var(--secondary-color);
             text-align: center;
             line-height: 110px;
+        }
+
+        #scroll-down {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
+            position: absolute;
+            top: 82%;
+        }
+
+        p {
+            font-family: var(--font-primary);
+            font-size: var(--font-size-h3);
+            width: 65vw;
+            text-align: center;
+            color: var(--accent-color);
+        }
+
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 3rem;
+            height: 3rem;
+            background-color: var(--accent-color);
+            border-radius: 8%;
+            text-decoration: none;
+
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+
         }
     }
 
@@ -238,6 +275,7 @@ footer {
 
 
 @media (max-width: 700px) {
+
     header nav .hamburger {
         display: flex;
     }
@@ -311,6 +349,10 @@ footer {
         }
     }
 
+    #scroll-down {
+        opacity: 0;
+    }
+
     footer {
         grid-template-columns: 1fr;
 
@@ -327,4 +369,13 @@ footer {
     height: 1px;
     background-color: var(--secondary-color);
     justify-self: center;
+}
+
+.borderVertical {
+    display: block;
+    width: 1px;
+    height: 8vh;
+    background-color: var(--secondary-color);
+    justify-self: center;
+    transform: none;
 }

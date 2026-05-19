@@ -1,12 +1,20 @@
 ---
 // @ts-nocheck
 
-const { HeroTop, HeroBottom } = Astro.props
+const { Herotext, HeroTextBottom, HeroStory } = Astro.props
 ---
 
 <section class="hero-section">
-    <h1>
-        <span>{HeroTop}</span> <br>
-        <span>{HeroBottom}</span>
-    </h1>
+    <h1>{Herotext} <br> {HeroTextBottom}</h1>
+    <p>{HeroStory}</p>
+
+    <div id="scroll-down">
+        <span class="borderVertical"></span>
+        <a href="#intro-message">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="39" viewBox="0 0 23 39" fill="none">
+            <path d="M9.98524 38.0607C10.571 38.6464 11.5208 38.6464 12.1066 38.0607L21.6525 28.5147C22.2383 27.9289 22.2383 26.9792 21.6525 26.3934C21.0667 25.8076 20.117 25.8076 19.5312 26.3934L11.0459 34.8787L2.56062 26.3934C1.97483 25.8076 1.02508 25.8076 0.439296 26.3934C-0.146491 26.9792 -0.146491 27.9289 0.439295 28.5147L9.98524 38.0607ZM11.0459 0L9.5459 -6.55671e-08L9.5459 37L11.0459 37L12.5459 37L12.5459 6.55671e-08L11.0459 0Z" fill="black"/>
+            </svg>
+        </a>
+    </div>
+    
 </section>

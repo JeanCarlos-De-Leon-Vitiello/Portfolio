@@ -4,6 +4,29 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
 ---
 
-<BaseLayout title="I'm Jean-Carlos" HeroTop="I'm" HeroBottom="Jean-Carlos">
+<BaseLayout title="I'm Jean-Carlos" Herotext="I'm" HeroTextBottom="Jean-Carlos" 
+	HeroStory="Emerging student designer based in Amsterdam
+	with a passion for creating innovative and 
+	aesthetically pleasing digital
+	products.">
+
+
+	<section id="intro-message">
+		<p>I design digital experiences, including <span>websites</span>, <span>apps</span>, and <span>interfaces</span> that delight your customers and help create stronger engagement and brand loyalty.</p>
+	</section>
 
 </BaseLayout>
+
+<style>
+		#intro-message {
+			font-size: clamp(1.5rem, 5vw, 7rem);
+			font-family: var(--font-primary);
+			width: 90%;
+			height: 40vh;
+
+			span {
+				color: var(--accent-color);
+			}
+			
+		}
+	</style>

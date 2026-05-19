@@ -10,7 +10,7 @@ import FooterComponent from '../components/FooterComponent.astro'
 import '../styles/global.css'
 
 
-const { title, HeroTop, HeroBottom } = Astro.props
+const { title, Herotext, HeroTextBottom, HeroStory } = Astro.props
 ---
 
 <html lang="nl">
@@ -27,7 +27,7 @@ const { title, HeroTop, HeroBottom } = Astro.props
         <HeaderComponent />
 
         <main>
-            <HeroComponent title={title} HeroTop={HeroTop} HeroBottom={HeroBottom} />
+            <HeroComponent title={title} Herotext={Herotext} HeroTextBottom={HeroTextBottom} HeroStory={HeroStory} />
 
             <slot></slot>
 
