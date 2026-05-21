@@ -1,0 +1,112 @@
+---
+//@ts-nocheck
+
+const { projectType, title, description, imageUrl } = Astro.props
+---
+
+<section class="projects">
+    <article>
+        <div class="info-div">
+            <p>{projectType}</p>
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <a href="#">
+                <span class="dot"></span>
+                <span>See Case</span>
+            </a>
+        </div>
+
+        <div class="image-div">
+            <img src={imageUrl} alt={title}>
+        </div>
+    </article>
+
+    <article class="article-reverse">
+        <div class="info-div">
+            <p>{projectType}</p>
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <a href="#">
+                <span class="dot"></span>
+                <span>See Case</span>
+            </a>
+        </div>
+
+        <div class="image-div">
+            <img src={imageUrl} alt={title}>
+        </div>
+    </article>
+</section>
+
+<style> 
+    .projects {
+		width: 100%;
+	}
+
+    article {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        width: 100%;
+        margin: 5rem 0;
+    }
+
+    .info-div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+        font-family: var(--secondairy-font);
+
+        p:nth-of-type(1) {
+            font-family: var(--font-primary);
+            font-size: var(--font-size-h3);
+
+        }
+
+        p:nth-of-type(2) {
+            padding-bottom: 1rem;
+            font-size: var(--text-size);
+        }
+        
+        h2 {
+            font-family: var(--font-primary);
+            padding: 1rem 0 0.5rem 0;
+            font-size: var(--font-size-h2);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            width: fit-content;
+
+            span:nth-child(1) {
+                width: 2vw;
+                height: 2vw;
+                border-radius: 100px;
+                background-color: var(--button-color);
+                margin-right: 0.75vw;
+            }
+        }
+
+    }
+
+    .image-div {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 10px;
+
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    
+    .article-reverse {
+        flex-direction: row-reverse;
+    }
+</style>

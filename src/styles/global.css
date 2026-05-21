@@ -12,6 +12,9 @@
 body {
     background-color: var(--primairy-color);
     color: var(--secondary-color);
+    max-width: 1536px;
+    margin: 0 auto;
+    overflow-x: hidden;
 }
 
 
@@ -23,6 +26,7 @@ body {
     --accent-color: #d88c3a;
     --accent-soft-color: #f2dcc3;
     --card-surface-color: #1f1a14;
+    --button-color: #94ADFF;
 
     /* Fonts */
     --font-primary: "BebasNeue", sans-serif;
@@ -32,6 +36,7 @@ body {
     --font-size-h1: clamp(4rem, 12vw, 8rem);
     --font-size-h2: clamp(2.5rem, 6vw, 5rem);
     --font-size-h3: clamp(1.5rem, 3vw, 2rem);
+    --text-size: clamp(0.9rem, 2vw, 2rem);
 
     /* Gradients */
 
@@ -215,9 +220,7 @@ header nav{
 
 
 
-
-
-
+    
 
 
 

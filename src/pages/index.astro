@@ -1,7 +1,7 @@
 ---
 // @ts-nocheck
 import BaseLayout from '../layouts/BaseLayout.astro'
-
+import ProjectComponent from '../components/ProjectComponent.astro'
 ---
 
 <BaseLayout title="I'm Jean-Carlos" Herotext="I'm" HeroTextBottom="Jean-Carlos" 
@@ -15,18 +15,25 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 		<p>I design digital experiences, including <span>websites</span>, <span>apps</span>, and <span>interfaces</span> that delight your customers and help create stronger engagement and brand loyalty.</p>
 	</section>
 
+	
+	<ProjectComponent projectType="Front end development project" title="AT5" 
+	description="AT5 is Amsterdam's city broadcaster for local news and 
+	events via TV, radio, and online." 
+	imageUrl="/images/at5.webp" />
+	
+
 </BaseLayout>
 
 <style>
-		#intro-message {
-			font-size: clamp(1.5rem, 5vw, 7rem);
-			font-family: var(--font-primary);
-			width: 90%;
-			height: 40vh;
+	#intro-message {
+		font-size: clamp(1.5rem, 5vw, 7rem);
+		font-family: var(--font-primary);
+		width: 90%;
 
-			span {
-				color: var(--accent-color);
-			}
-			
+		span {
+			color: var(--accent-color);
 		}
-	</style>
+			
+	}
+
+</style>
