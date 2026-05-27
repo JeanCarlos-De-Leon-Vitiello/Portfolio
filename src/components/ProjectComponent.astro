@@ -5,7 +5,7 @@ const { projectType, title, description, imageUrl, projectType2, title2, descrip
 ---
 
 <section class="projects">
-    <article>
+    <article style={`--project-image: url(${imageUrl})`}>
         <div class="info-div">
             <p>{projectType}</p>
             <h2>{title}</h2>
@@ -21,7 +21,7 @@ const { projectType, title, description, imageUrl, projectType2, title2, descrip
         </div>
     </article>
 
-    <article class="article-reverse">
+    <article class="article-reverse" style={`--project-image: url(${imageUrl2})`}>
         <div class="info-div">
             <p>{projectType2}</p>
             <h2>{title2}</h2>
@@ -44,12 +44,53 @@ const { projectType, title, description, imageUrl, projectType2, title2, descrip
 	}
 
     article {
+        position: relative;
+        isolation: isolate;
         display: flex;
         flex-direction: row;
         align-items: stretch;
         gap: 2rem;
         width: 100%;
-        margin: 5rem 0;
+        padding-block: clamp(2rem, 5vw, 5rem);
+    }
+
+    article::before,
+    article::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: clamp(1rem, 5vw, 4rem);
+        width: clamp(8rem, 22vw, 18rem);
+        aspect-ratio: 16 / 10;
+        background-image: var(--project-image);
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        opacity: 0;
+        pointer-events: none;
+        z-index: -1;
+        transform: translateY(-20%) rotate(0deg) scale(0.92);
+        transition: transform 0.45s ease, opacity 0.35s ease;
+    }
+
+    article::after {
+        right: clamp(4rem, 13vw, 12rem);
+        transform: translateY(-15%) rotate(0deg) scale(0.88);
+        transition-delay: 0.06s;
+    }
+
+    article:hover::before {
+        opacity: 0.9;
+        transform: translate(22%, -138%) rotate(12deg) scale(1);
+    }
+
+    article:hover::after {
+        opacity: 0.7;
+        transform: translate(-22%, -128%) rotate(-12deg) scale(0.95);
+    }
+
+    article + article {
+        margin-top: clamp(3rem, 7vw, 6rem);
     }
 
     .info-div {
@@ -85,11 +126,39 @@ const { projectType, title, description, imageUrl, projectType2, title2, descrip
             width: fit-content;
 
             span:nth-child(1) {
-                width: 2vw;
-                height: 2vw;
+                width: clamp(0.75rem, 1.4vw, 1.4rem);
+                height: clamp(0.75rem, 1.4vw, 1.4rem);
                 border-radius: 100px;
                 background-color: var(--button-color);
                 margin-right: 0.75vw;
+                transition: background-color 0.35s ease, transform 0.35s ease;
+            }
+
+            span:nth-child(2) {
+                position: relative;
+            }
+
+            span:nth-child(2)::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -0.35rem;
+                height: 2px;
+                background-color: var(--button-color);
+                transform: scaleX(0);
+                transform-origin: left center;
+                transition: transform 0.35s ease, background-color 0.35s ease 0.15s;
+            }
+
+            &:hover span:nth-child(2)::after {
+                background-color: var(--accent-color);
+                transform: scaleX(1);
+            }
+
+            &:hover span:nth-child(1) {
+                background-color: var(--accent-color);
+                transform: scale(1.25);
             }
         }
 
@@ -101,6 +170,7 @@ const { projectType, title, description, imageUrl, projectType2, title2, descrip
         aspect-ratio: 16 / 10;
         overflow: hidden;
         border-radius: 10px;
+        transition: transform 0.45s ease;
 
         img {
             display: block;
@@ -108,6 +178,10 @@ const { projectType, title, description, imageUrl, projectType2, title2, descrip
             height: 100%;
             object-fit: cover;
         }
+    }
+
+    article:hover .image-div {
+        transform: translateY(2.5rem);
     }
     
     .article-reverse {
@@ -118,12 +192,34 @@ const { projectType, title, description, imageUrl, projectType2, title2, descrip
         }
     }
 
+    .article-reverse::before {
+        right: auto;
+        left: clamp(1rem, 5vw, 4rem);
+    }
+
+    .article-reverse::after {
+        right: auto;
+        left: clamp(4rem, 13vw, 12rem);
+    }
+
+    .article-reverse:hover::before {
+        transform: translate(-22%, -138%) rotate(-12deg) scale(1);
+    }
+
+    .article-reverse:hover::after {
+        transform: translate(22%, -128%) rotate(12deg) scale(0.95);
+    }
+
     @media (max-width: 768px) {
         article,
         .article-reverse {
             flex-direction: column;
             gap: 1.5rem;
-            margin: 3rem 0;
+        }
+
+        article::before,
+        article::after {
+            display: none;
         }
 
         .info-div,
