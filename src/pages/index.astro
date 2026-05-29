@@ -12,13 +12,12 @@ import ProjectComponent from '../components/ProjectComponent.astro'
 
 
 	<section id="intro-message">
-		<p>I design digital experiences, including <span>websites</span>, <span>apps</span>, and <span>interfaces</span> that delight your customers and help create stronger engagement and brand loyalty.</p>
+		<p>Ik ontwerp niet alleen <span>digitale producten</span>, ik onderzoek hoe mensen ze gebruiken. Als CMD-student combineer ik <span>UX-research</span>, <span>usability testing</span> en <code><span class="code-brace">&lbrace;</span><span class="code-word"> development </span><span class="code-brace">&rbrace;</span></code> om gebruiksvriendelijke oplossingen te creeren die zowel esthetisch als functioneel zijn.</p>
 	</section>
 
 	
-	<ProjectComponent projectType="Front end development project" title="AT5" 
-	description="AT5 is Amsterdam's city broadcaster for local news and 
-	events via TV, radio, and online." 
+	<ProjectComponent projectType="UX-analyse en Verbeteradvies" title="KLM" 
+	description="UX-analyse van een intern KLM-systeem met focus op gebruiksgemak en efficiëntie." 
 	imageUrl="/images/at5.webp" 
 	
 	projectType2="Front end development project" title2="AT5" 
@@ -64,12 +63,47 @@ import ProjectComponent from '../components/ProjectComponent.astro'
 
 <style>
 	#intro-message {
-		font-size: clamp(1.5rem, 5vw, 7rem);
+		font-size: clamp(1.4rem, 3.6vw, 4.5rem);
 		font-family: var(--font-primary);
-		width: 90%;
+		width: min(100%, 62rem);
 
 		span {
 			color: var(--accent-color);
+		}
+
+		code {
+			font-family: inherit;
+			font-size: inherit;
+		}
+
+		.code-brace {
+			color: #ffd700;
+			display: inline-block;
+			transition: color 0.3s ease, transform 0.3s ease;
+		}
+
+		.code-word {
+			color: #9cdcfe;
+			display: inline-block;
+			transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+		}
+
+		code:hover .code-brace {
+			color: #a259ff;
+		}
+
+		code:hover .code-brace:first-child {
+			transform: translateX(-0.18em);
+		}
+
+		code:hover .code-brace:last-child {
+			transform: translateX(0.18em);
+		}
+
+		code:hover .code-word {
+			color: #5fb3dc;
+			text-shadow: 0 0 0.75rem rgba(156, 220, 254, 0.8);
+			transform: scale(0.92);
 		}
 			
 	}
@@ -108,7 +142,8 @@ import ProjectComponent from '../components/ProjectComponent.astro'
 	}
 
 	.scroll-text p {
-		margin: 1rem 0;
+		max-width: 34rem;
+		margin: 1rem auto 0;
 		font-family: var(--secondairy-font);
 		font-size: var(--text-size);
 		line-height: 1.5;
@@ -187,43 +222,43 @@ import ProjectComponent from '../components/ProjectComponent.astro'
 	}
 
 	.image-group img:nth-child(1) {
-		--x: clamp(-28rem, -32vw, -12rem);
-		--y: clamp(-14rem, -16vw, -7rem);
+		--x: clamp(-34rem, -40vw, -16rem);
+		--y: clamp(-17rem, -20vw, -9rem);
 	}
 
 	.image-group img:nth-child(2) {
-		--x: clamp(2rem, 5vw, 8rem);
-		--y: clamp(-20rem, -24vw, -10rem);
+		--x: clamp(3rem, 7vw, 10rem);
+		--y: clamp(-24rem, -30vw, -13rem);
 	}
 
 	.image-group img:nth-child(3) {
-		--x: clamp(6rem, 45vw, 26rem);
-		--y: clamp(-16rem, -18vw, -8rem);
+		--x: clamp(10rem, 52vw, 32rem);
+		--y: clamp(-19rem, -23vw, -10rem);
 	}
 
 	.image-group img:nth-child(4) {
-		--x: clamp(15rem, 34vw, 32rem);
-		--y: clamp(1rem, 3vw, 4rem);
+		--x: clamp(20rem, 42vw, 38rem);
+		--y: clamp(2rem, 4vw, 5rem);
 	}
 
 	.image-group img:nth-child(5) {
-		--x: clamp(16rem, 32vw, 30rem);
-		--y: clamp(11rem, 18vw, 18rem);
+		--x: clamp(20rem, 40vw, 36rem);
+		--y: clamp(14rem, 22vw, 22rem);
 	}
 
 	.image-group img:nth-child(6) {
-		--x: clamp(8rem, 13vw, 14rem);
-		--y: clamp(15rem, 23vw, 21rem);
+		--x: clamp(10rem, 16vw, 18rem);
+		--y: clamp(18rem, 28vw, 26rem);
 	}
 
 	.image-group img:nth-child(7) {
-		--x: clamp(-25rem, -30vw, -12rem);
-		--y: clamp(13rem, 21vw, 19rem);
+		--x: clamp(-32rem, -38vw, -16rem);
+		--y: clamp(16rem, 26vw, 24rem);
 	}
 
 	.image-group img:nth-child(8) {
-		--x: clamp(-32rem, -38vw, -15rem);
-		--y: clamp(2rem, 5vw, 7rem);
+		--x: clamp(-38rem, -46vw, -19rem);
+		--y: clamp(3rem, 7vw, 9rem);
 	}
 
 

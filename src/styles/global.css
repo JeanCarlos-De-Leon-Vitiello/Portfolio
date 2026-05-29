@@ -29,6 +29,76 @@ main > * + * {
     margin-top: var(--section-gap);
 }
 
+#page-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    background-color: var(--primairy-color);
+    color: var(--secondary-color);
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#page-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-code {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15em;
+    font-family: var(--font-primary);
+    font-size: clamp(3rem, 10vw, 8rem);
+    line-height: 1;
+    animation: loader-pop 1.2s ease-in-out infinite;
+}
+
+.loader-brace {
+    color: #ffd700;
+    animation: loader-brace 1.2s ease-in-out infinite;
+}
+
+.loader-word {
+    color: var(--secondary-color);
+    text-shadow: 0 0 1.5rem rgba(255, 255, 255, 0.75);
+}
+
+@keyframes loader-pop {
+    0%,
+    100% {
+        opacity: 0.65;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes loader-brace {
+    0%,
+    100% {
+        color: #ffd700;
+        transform: translateX(0);
+    }
+
+    50% {
+        color: #a259ff;
+        transform: translateX(var(--brace-offset, 0));
+    }
+}
+
+.loader-brace:first-child {
+    --brace-offset: -0.15em;
+}
+
+.loader-brace:last-child {
+    --brace-offset: 0.15em;
+}
+
 
 :root {
     /* Colors */
@@ -253,7 +323,7 @@ header nav{
         p {
             font-family: var(--font-primary);
             font-size: var(--font-size-h3);
-            width: 65vw;
+            width: min(65vw, 42rem);
             text-align: center;
             color: var(--accent-color);
         }

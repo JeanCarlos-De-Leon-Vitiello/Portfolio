@@ -19,11 +19,20 @@ const { title, Herotext, HeroTextBottom, HeroStory } = Astro.props
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
+        <meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
         <script src="/javascript/hamburger.js" defer></script>
+        <script src="/javascript/page-loader.js" defer></script>
 	</head>
 	<body>
+        <div id="page-loader" aria-label="Pagina laden">
+            <div class="loader-code" aria-hidden="true">
+                <span class="loader-brace">&lbrace;</span>
+                <span class="loader-word" data-loader-text="Jean-Carlos">Jean-Carlos</span>
+                <span class="loader-brace">&rbrace;</span>
+            </div>
+        </div>
+
         <HeaderComponent />
 
         <main>
