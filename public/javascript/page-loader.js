@@ -34,7 +34,7 @@ if (loaderWord) {
 window.addEventListener("load", () => {
     window.setTimeout(() => {
         loader?.classList.add("is-hidden");
-    }, 1400);
+    }, 2000);
 });
 
 loader?.addEventListener("transitionend", () => {
